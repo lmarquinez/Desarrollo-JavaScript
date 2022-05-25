@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="fonts/fonts.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!---->
+    <link href="images/favicon.png" rel="icon" type="image/png" />
+    <title>agoodshop | Laura Marquinez</title>
+</head>
+
+<body class="bg-dark">
+
+    <!--**HEADER**: title-->
+    <header class="border-bottom border-white">
+        <nav class="navbar navbar-expand-lg m-2 p-1">
+            <div class="container-fluid">
+                <h1 class="navbar-brand text-white">
+                    agoodshop
+                </h1>
+            </div>
+        </nav>
+    </header>
+    <!--/HEADER-->
+
+    <!--**MAIN**-->
+    <main class="container-fluid">
+        <div class="row justify-content-around">
+            <!--**SECTION**: products table -->
+            <section class="col-lg-7">
+                <table class="table table-striped table-hover table-light my-5">
+                    <thead class="border-bottom border-secondary">
+                        <tr>
+                            <th scope="col">
+                                Producto
+                            </th>
+                            <th scope="col">
+                                Cantidad
+                            </th>
+                            <th scope="col">
+                                Unidad
+                            </th>
+                            <th scope="col">
+                                Total
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- items generated from JSON -->
+                        <tr>
+                            <th>
+                                <h2 class="fw-bold">
+                                    iFhone 13 Pro
+                                </h2>
+                                <p class="fw-normal fs-6">
+                                    Ref: 0K3QOSOV4V
+                                </p>
+                            </th>
+                            <td class="align-middle">
+                                <button class="btn btn-danger m-1">
+                                    -
+                                </button>
+                                <span class="border border-secondary rounded-2 py-2 px-4">
+                                    3
+                                </span>
+                                <button class="btn btn-info m-1">
+                                    +
+                                </button>
+                            </td>
+                            <td class="align-middle">
+                                938,99€
+                            </td>
+                            <td class="align-middle">
+                                2816,97€
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <h2 class="fw-bold">
+                                    Cargador
+                                </h2>
+                                <p class="fw-normal fs-6">
+                                    Ref: TGD5XORY1L
+                                </p>
+                            </th>
+                            <td class="align-middle">
+                                <button class="btn btn-danger m-1">
+                                    -
+                                </button>
+                                <span class="border border-secondary rounded-2 py-2 px-4">
+                                    0
+                                </span>
+                                <button class="btn btn-info m-1">
+                                    +
+                                </button>
+                            </td>
+                            <td class="align-middle">
+                                49.99€
+                            </td>
+                            <td class="align-middle">
+                                0€
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <h2 class="fw-bold">
+                                    Funda de piel
+                                </h2>
+                                <p class="fw-normal fs-6">
+                                    Ref: IOKW9BQ9F3
+                                </p>
+                            </th>
+                            <td class="align-middle">
+                                <button class="btn btn-danger m-1">
+                                    -
+                                </button>
+                                <span class="border border-secondary rounded-2 py-2 px-4">
+                                    2
+                                </span>
+                                <button class="btn btn-info m-1">
+                                    +
+                                </button>
+                            </td>
+                            <td class="align-middle">
+                                79,99€
+                            </td>
+                            <td class="align-middle">
+                                159,98€
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <!--/SECTION-->
+
+            <!--**ASIDE**: shopping cart -->
+            <aside class="col-lg-3">
+                <div class="flex-column bg-light my-5 p-4">
+                    <h2 class="fw-bold">
+                        Total
+                    </h2>
+                    <!-- add products with their price -->
+                    <div class="d-flex justify-content-between">
+                        <p>
+                            iFhone 13 Pro
+                        </p>
+                        <p>
+                            2816,97€
+                        </p>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <p>
+                            Funda de piel
+                        </p>
+                        <p>
+                            159,98€
+                        </p>
+                    </div>
+                    <div class="border-top border-secondary pt-4 d-flex align-items-center justify-content-between">
+                        <h2 class="text-uppercase">
+                            Total
+                        </h2>
+                        <!-- calculate total -->
+                        <p>
+                            5820€
+                        </p>
+                    </div>
+                </div>
+            </aside>
+            <!--/ASIDE-->
+
+        </div>
+    </main>
+    <!--/MAIN-->
+
+    <!-- JavaScript FontAwesome -->
+    <script src="https://kit.fontawesome.com/e524af45b4.js" crossorigin="anonymous"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
