@@ -52,89 +52,9 @@
                             </th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="table_content">
                         <!-- items generated from JSON -->
-                        <tr>
-                            <th>
-                                <h2 class="fw-bold">
-                                    iFhone 13 Pro
-                                </h2>
-                                <p class="fw-normal fs-6">
-                                    Ref: 0K3QOSOV4V
-                                </p>
-                            </th>
-                            <td class="align-middle">
-                                <button class="btn btn-danger m-1">
-                                    -
-                                </button>
-                                <span class="border border-secondary rounded-2 py-2 px-4">
-                                    3
-                                </span>
-                                <button class="btn btn-info m-1">
-                                    +
-                                </button>
-                            </td>
-                            <td class="align-middle">
-                                938,99€
-                            </td>
-                            <td class="align-middle">
-                                2816,97€
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>
-                                <h2 class="fw-bold">
-                                    Cargador
-                                </h2>
-                                <p class="fw-normal fs-6">
-                                    Ref: TGD5XORY1L
-                                </p>
-                            </th>
-                            <td class="align-middle">
-                                <button class="btn btn-danger m-1">
-                                    -
-                                </button>
-                                <span class="border border-secondary rounded-2 py-2 px-4">
-                                    0
-                                </span>
-                                <button class="btn btn-info m-1">
-                                    +
-                                </button>
-                            </td>
-                            <td class="align-middle">
-                                49.99€
-                            </td>
-                            <td class="align-middle">
-                                0€
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>
-                                <h2 class="fw-bold">
-                                    Funda de piel
-                                </h2>
-                                <p class="fw-normal fs-6">
-                                    Ref: IOKW9BQ9F3
-                                </p>
-                            </th>
-                            <td class="align-middle">
-                                <button class="btn btn-danger m-1">
-                                    -
-                                </button>
-                                <span class="border border-secondary rounded-2 py-2 px-4">
-                                    2
-                                </span>
-                                <button class="btn btn-info m-1">
-                                    +
-                                </button>
-                            </td>
-                            <td class="align-middle">
-                                79,99€
-                            </td>
-                            <td class="align-middle">
-                                159,98€
-                            </td>
-                        </tr>
+
                     </tbody>
                 </table>
             </section>
@@ -142,34 +62,21 @@
 
             <!--**ASIDE**: shopping cart -->
             <aside class="col-lg-3">
-                <div class="flex-column bg-light my-5 p-4">
-                    <h2 class="fw-bold">
+                <div id="shopping-cart" class="flex-column bg-light my-5 p-4">
+                    <h2 id="sc-total-product" class="fw-bold">
                         Total
                     </h2>
-                    <!-- add products with their price -->
-                    <div class="d-flex justify-content-between">
-                        <p>
-                            iFhone 13 Pro
-                        </p>
-                        <p>
-                            2816,97€
-                        </p>
-                    </div>
-                    <div class="d-flex justify-content-between">
-                        <p>
-                            Funda de piel
-                        </p>
-                        <p>
-                            159,98€
-                        </p>
+                    <div id="sc-products">
+                        <!-- add products with their price -->
+
                     </div>
                     <div class="border-top border-secondary pt-4 d-flex align-items-center justify-content-between">
-                        <h2 class="text-uppercase">
+                        <h2 id="sc-total" class="text-uppercase">
                             Total
                         </h2>
                         <!-- calculate total -->
-                        <p>
-                            5820€
+                        <p class="js-total">
+                            0€
                         </p>
                     </div>
                 </div>
@@ -186,6 +93,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
         crossorigin="anonymous"></script>
+    <script src="scripts/carrito.js"></script>
+    <script src="scripts/producto.js"></script>
+    <script src="scripts/app.js"></script>
+
 </body>
 
 </html>
