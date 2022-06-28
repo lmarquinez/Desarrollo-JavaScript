@@ -1,19 +1,13 @@
 const jsonblob = 'https://jsonblob.com/api/984558472431681536';
-let json;
 const shoppingcart = new Carrito();
 
 document.addEventListener('DOMContentLoaded', async () => {
 
-    /*
-    *
-    * Coger los productos de JSONBLOB
-    *
-    */
-    let i = 1;
+    /* Fetching the data from the jsonblob and then it is drawing the products on the page. */
+    let i = 1; //id para cada producto
     await fetch(jsonblob)
         .then(res => res.json()) //retorna una promesa
         .then(data => { //contenido de response
-            json = data;
             data.products.forEach(elem => {
                 // pintar los productos obtenidos
                 drawProducts(elem.title, elem.SKU, elem.price, i);
@@ -21,15 +15,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             });
         });
 
-    /*
-    *
-    * Funcionalidades de los botones de la tabla de productos
-    *
-    */
-
-    /*
-    * Sumar productos
-    */
+    /* Adding an event listener to the button plus. */
     const buttonPlus = document.querySelectorAll('.js-btn-plus');
     buttonPlus.forEach(elem => {
         elem.addEventListener('click', (event) => {
@@ -48,6 +34,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     });
 
+    /**
+     * It adds a product to the shopping cart, updates the quantity of the product in the table, calculates
+     * the total price of the products in the table, clears the shopping cart, and draws the shopping cart
+     * @param product - The product object that we want to add to the shopping cart.
+     * @param span_cont - The span that contains the number of products.
+     */
     function addProduct(product, span_cont) {
         //añadimos el producto al carrito
         shoppingcart.addProduct(product);
@@ -63,9 +55,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         drawShoppingCart();
     }
 
-    /*
-    * Restar productos
-    */
+    /* A function that removes a product from the shopping cart. */
     const buttonMinus = document.querySelectorAll('.js-btn-minus');
     buttonMinus.forEach(elem => {
         elem.addEventListener('click', (event) => {
@@ -83,6 +73,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     });
 
+    /* A function that removes a product from the shopping cart. */
     function removeProduct(product, span_cont) {
         if (shoppingcart.productExist(product)) {
             // si existe, actualizamos las unidades del producto
@@ -104,11 +95,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     }
 
-    /*
-    *
-    * Calcular precio total de productos en la tabla
-    *
-    */
+    /**
+     * It calculates the total price of a product and updates the total price in the shopping cart
+     * @param product - the product object
+     * @param contElem - The container element that holds the product information.
+     */
     function calculateTotalProducts(product, contElem) {
         let row = (contElem.id[contElem.id.length - 1]);
         const total = document.querySelector(`#total${row}`);
@@ -122,16 +113,17 @@ document.addEventListener('DOMContentLoaded', async () => {
             total.innerText = (total_price).toFixed(2) + shoppingcart.currency;
         }
     }
-    console.log(shoppingcart.products);
-
 });
 
 
-/*
-*
-* Pintar productos en la tabla
-*
-*/
+/**
+ * It creates a table row with the product name, sku, price, and a button to add or remove the product
+ * from the shopping cart
+ * @param product_name - The name of the product
+ * @param product_sku - The product's SKU
+ * @param product_price - the price of the product
+ * @param i - the index of the product in the array
+ */
 const drawProducts = (product_name, product_sku, product_price, i) => {
     let table_content = document.getElementById('table_content');
     table_content.innerHTML +=
@@ -165,11 +157,9 @@ const drawProducts = (product_name, product_sku, product_price, i) => {
 `;
 }
 
-/*
-*
-* Pintar carrito
-*
-*/
+/**
+ * It draws the shopping cart on the page
+ */
 const drawShoppingCart = () => {
     const total_product = document.getElementById('sc-products');
     shoppingcart.products.forEach(elem => {
